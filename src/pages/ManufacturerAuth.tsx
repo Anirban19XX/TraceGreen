@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Shield, Mail, Lock, User, Building } from 'lucide-react';
+import { Shield, Mail, Lock, User, Building, FileText } from 'lucide-react';
 import Header from '../components/Header';
 
 const ManufacturerAuth = () => {
@@ -62,6 +62,23 @@ const ManufacturerAuth = () => {
                       className="w-full px-4 py-3 bg-black/40 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-neon-green focus:ring-1 focus:ring-neon-green transition-colors"
                       placeholder="Your Company Ltd."
                     />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-300 mb-2">
+                      <FileText className="h-4 w-4 inline mr-2" />
+                      GSTIN Number
+                    </label>
+                    <input
+                      type="text"
+                      pattern="[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}"
+                      className="w-full px-4 py-3 bg-black/40 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-neon-green focus:ring-1 focus:ring-neon-green transition-colors"
+                      placeholder="22AAAAA0000A1Z5"
+                      title="Enter valid GSTIN (15 characters)"
+                    />
+                    <p className="text-xs text-gray-500 mt-1">
+                      15-character GST identification number (optional)
+                    </p>
                   </div>
                 </>
               )}
